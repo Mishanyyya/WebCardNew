@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Портфолио Михаила</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <script defer src="{% static 'js/likes.js' %}"></script>
+</head>
+<body>
+
+<header>
+  <h1>Михаил Просеков</h1>
+  <p>НЕПрофессиональный фотограф</p>
+
+  <nav>
+  {% if user.is_authenticated %}
+    <span>Привет, {{ user.username }}!</span> |
+    <a href="{% url 'main:upload_photo' %}">Загрузить фото</a> |
+    <form method="post" action="{% url 'main:logout' %}" style="display: inline;">
+      {% csrf_token %}
+      <button type="submit" style="background: none; border: none; color: blue; cursor: pointer; text-decoration: underline;">
+        Выйти
+      </button>
+    </form>
+  {% else %}
+    <a href="{% url 'main:login' %}">Войти</a> |
+    <a href="{% url 'main:register' %}">Регистрация</a>
+  {% endif %}
+  </nav>
+</header>
+
+<main>
+  <section id="portfolio">
+    <h2>Портфолио</h2>
+    <div class="gallery">
+      {% for photo in photos %}
+        <div class="photo-card" data-id="{{ photo.id }}">
+        <img src="{{ photo.image.url }}" alt="Фото {{ forloop.counter }}" />
+        <button class="like-button {% if photo.id in liked_photo_ids %}liked{% endif %}">
+         ❤️ <span class="like-count">{{ photo.total_likes }}</span>
+        </button>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
