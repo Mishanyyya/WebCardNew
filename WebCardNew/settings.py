@@ -127,7 +127,7 @@ STATICFILES_DIRS =[
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'photos'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 LOGIN_URL = '/login/'
