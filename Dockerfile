@@ -8,6 +8,10 @@ COPY requirements.txt /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN python manage.py makemigrations main
+
+RUN python manage.py migrate main
+
 COPY . /app/
 
 EXPOSE 8000
