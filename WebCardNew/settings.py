@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ux1f_!((x(dhn#z*)(8f(%u_e&ug7r3=n_a#_oytp=%yv7cdi3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -71,6 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'WebCardNew.wsgi.application'
 
+ALLOWED_HOSTS = ['*']
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
