@@ -71,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'WebCardNew.wsgi.application'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.up.railway.app', '127.0.0.1', 'localhost']
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -137,4 +137,4 @@ LOGIN_REDIRECT_URL = 'main:index'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['https://webcardnew-production.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://webcardnew-production.up.railway.app']
