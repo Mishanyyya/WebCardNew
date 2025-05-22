@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ux1f_!((x(dhn#z*)(8f(%u_e&ug7r3=n_a#_oytp=%yv7cdi3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['webcardnew-production.up.railway.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

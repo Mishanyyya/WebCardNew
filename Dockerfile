@@ -12,4 +12,4 @@ COPY . /app/
 
 EXPOSE 8000
 
-CMD ["gunicorn", "WebCardNew.wsgi", "--bind", "127.0.0.1:8000"]
+CMD ["gunicorn", "WebCardNew.wsgi", "--bind", "0.0.0.0:8000"]
