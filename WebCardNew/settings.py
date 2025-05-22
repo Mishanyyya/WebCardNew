@@ -137,4 +137,4 @@ LOGIN_REDIRECT_URL = 'main:index'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['https://your-app-name.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://webcardnew-production.up.railway.app/']
