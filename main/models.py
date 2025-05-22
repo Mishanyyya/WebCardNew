@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Photo(models.Model):
-    image = models.ImageField(upload_to="photos/")
+    image = models.ImageField(upload_to="media/photos/")
     total_likes = models.PositiveIntegerField(default=0)
 
     def __str__(self):
